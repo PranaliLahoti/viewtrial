@@ -1,0 +1,24 @@
+
+      <html>
+        <button type="button" class="btn btn-success" routerLink="/employeedashboard">Dashboard</button>
+    <table style="width:100%" >
+        <tr>
+            <th>Parcel ID</th>
+            <th>Company Name</th>
+            <th>Receiver Id</th>
+            <th>Deliver time</th>
+        </tr>
+        <tbody>
+            <tr *ngFor="let employee of ParcelDatabases">
+                <td>{{employee.parcelID}}</td>
+                <td>{{employee.cname}}</td>
+                <td>{{employee.recId}}</td>
+                <td>{{employee.d_time}}</td>
+                 
+              </tr>
+         
+      </tbody>
+    
+      </table>
+      
+</html>

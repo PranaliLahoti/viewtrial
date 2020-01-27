@@ -1,0 +1,35 @@
+<html>
+    <button type="button" class="btn btn-success" routerLink="/orders">Receive</button>
+    <input type="text" name="search"><br>
+    <table style="width:100%" >
+        <tr>
+          <th>Parcel ID</th>
+          <th>Employee ID</th>
+          <th>Company Name</th>
+          <th>Receive_Time</th>
+         
+          <th>Rack</th>
+          <th>Note</th>
+          <th>Deliver_Time</th>
+          <th>Check</th>
+          <th>Status</th>
+         
+          
+        </tr>
+        <tbody>
+          <tr *ngFor="let employee of ParcelDatabases">
+              <td>{{employee.parcelID}}</td>
+              <td>{{employee.empId}}</td>
+              <td>{{employee.cname}}</td>
+              <td>{{employee.r_time}}</td>        
+              <td>{{employee.rack}}</td>
+              <td>{{employee.note}}</td>
+              <td>{{employee.d_time}}</td>
+              <td><button class="handover"  [routerLink]="['/handoverpage',employee.parcelID]">Handover</button></td>
+              <td>{{employee.status}}</td>
+              </tr>
+      </tbody>
+    
+      </table>
+      
+</html>

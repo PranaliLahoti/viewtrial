@@ -1,0 +1,31 @@
+<div class="col-md-6">
+    <h2 class="text-center">Add Parcel</h2>
+    <form >
+      <div class="form-group">
+        Parcel ID
+        <input type="name" [(ngModel)]="user.parcelID" placeholder="parcelID" name="parcelID" class="form-control" id="name">
+      </div>
+    
+      <div class="form-group">
+        Employee Contact
+        <input [(ngModel)]="user.ephone" placeholder="ephone" name="ephone" class="form-control" id="ephone">
+      </div>
+    
+      <div class="form-group">
+        Parcel Company
+        <input [(ngModel)]="user.cname" placeholder="Parcel Comapny" name="cname" class="form-control" id="cname">
+      </div>
+      <div class="form-group">
+        Rack
+        <input [(ngModel)]="user.rack" placeholder="Rack" name="rack" class="form-control" id="rack">
+      </div>
+      <div class="form-group">
+        Note
+        <input [(ngModel)]="user.note" placeholder="Note" name="note" class="form-control" id="note">
+      </div>
+      
+      <button class="btn btn-success" (click)="createEmployee()">Create</button>
+    </form>
+    </div>
+        
+    

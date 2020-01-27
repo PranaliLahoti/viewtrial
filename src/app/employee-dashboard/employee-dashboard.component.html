@@ -1,0 +1,24 @@
+
+      <html>
+        <button type="button" class="btn btn-success" routerLink="/parcelhistory">History</button>
+    <table style="width:100%" >
+        <tr>
+            <th>Parcel ID</th>
+            <th>Parcel Name</th>
+            <th>Receive time</th>
+            <th></th>
+        </tr>
+        <tbody>
+            <tr *ngFor="let employee of ParcelDatabases">
+                <td>{{employee.parcelID}}</td>
+                <td>{{employee.cname}}</td>
+                <td>{{employee.r_time}}</td>
+                <td><button class = "handover" (click)="collectParcel(employee.parcelID)">Collect</button></td>   
+                
+              </tr>
+         
+      </tbody>
+    
+      </table>
+      
+</html>
