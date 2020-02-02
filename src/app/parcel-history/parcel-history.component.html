@@ -1,7 +1,14 @@
 
       <html>
-        <button type="button" class="btn btn-success" routerLink="/employeedashboard">Dashboard</button>
-    <table style="width:100%" >
+
+        <adapt-navigation
+        [metadata]="metadata"
+        [menu]="items"
+        [actions]="actions"
+        [profile]="profile">
+        </adapt-navigation>
+<!--
+ <table role="grid" aria-labelledby="gridLabel" class="table" >
         <tr>
             <th>Parcel ID</th>
             <th>Company Name</th>
@@ -20,5 +27,12 @@
       </tbody>
     
       </table>
-      
+
+-->
+<adapt-table #adaptTable [value]="ParcelDatabases" [columns]="cols" [rows]="10" [first]="0" [paginator]="true"
+  [resizableColumns]="true" [bordered]="true" dataKey="parcelID" paginatorAlign="right" [loading]="loading"
+  [lazyLoadOnInit]="false" [enableReorderableRows]="true"  [filterable]="true" [filters]="filters"
+  [toolbarConfig]="optionsProperties.hasToolbar ? toolbarConfig : null">
+</adapt-table>
+
 </html>

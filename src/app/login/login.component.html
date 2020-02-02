@@ -1,5 +1,5 @@
-<p>login works!</p>
-<div class="container" >
+<!--p>login works!<p>
+<div-- class="container" >
     <div>
       <br>
       User Name : <input type="text" name="username" [(ngModel)]="username">
@@ -8,4 +8,53 @@
     <button (click)=checkLogin() class="btn btn-success">
       Login
     </button>
+  </div-->
+    
+
+  <div class="login-page-wrp">
+    <adapt-login productName="Parcel Management System"
+                 [footerConfig]="footerItems">
+
+      <form class="form" >
+        <adapt-textfield [type]="'text'"
+                         [name]="'login-page'"
+                         [autocomplete]="'off'"
+                         [placeholder]="'User name'"
+                         [label]="'User name'"
+                         [icon]="'d-icon-left-user'"
+                         pattern=".{3,20}"
+                         error="3 to 20 characters"
+                         [(ngModel)]="username">
+        </adapt-textfield>
+
+        <adapt-textfield [type]="'password'"
+                         [name]="'password-page'"
+                         [autocomplete]="'off'"
+                         pattern=".{6,}"
+                         error="6 min characters"
+                         [icon]="'d-icon-left-lock'"
+                         [placeholder]="'Password'"
+                         [label]="'Password'"
+                         [(ngModel)]="password">
+        </adapt-textfield>
+
+        <div class="form__additional">
+          <adapt-checkbox2 name="group1" value="true" label="Remember me" [(ngModel)]="checkbox"></adapt-checkbox2>
+          <a href="#" class="form__additional-link">Sign in help</a>
+        </div>
+
+        <button adapt-button btn-type="primary" size="block" class="form__button" (click)="checkLogin()">Sign in
+        </button>
+
+        <div class="form__licence d-icon-left-info_circle">License expiration date: 31/12/2099</div>
+      </form>
+    </adapt-login>
+
+    <!--
+       <adapt-alert-animated [isVisible]="loginError" [config]="alerts" [isContainer]="true"
+                          (alert-closed)="closeAlert($event)">
+    </adapt-alert-animated>
+  -->
+   
   </div>
+

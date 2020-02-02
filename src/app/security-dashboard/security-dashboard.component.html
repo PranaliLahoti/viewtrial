@@ -1,7 +1,8 @@
 <html>
-    <button type="button" class="btn btn-success" routerLink="/orders">Receive</button>
-    <input type="text" name="search"><br>
-    <table style="width:100%" >
+<adapt-navigation [metadata]="metadata" [menu]="items" [actions]="actions">
+</adapt-navigation>
+
+<!--table  role="grid" aria-labelledby="gridLabel" class="table" >
         <tr>
           <th>Parcel ID</th>
           <th>Employee ID</th>
@@ -25,11 +26,58 @@
               <td>{{employee.rack}}</td>
               <td>{{employee.note}}</td>
               <td>{{employee.d_time}}</td>
-              <td><button class="handover"  [routerLink]="['/handoverpage',employee.parcelID]">Handover</button></td>
+
+              <ng-template #mTemplate let-c="close">
+
+                <adapt-textfield label="Receiver ID"
+                rows="1"
+                required
+                name="textarea"
+                [(ngModel)]="recID"></adapt-textfield>
+              
+             
+                <button adapt-button btn-type="primary" size="large" class=" btn-primary" (click)= "handoverParcel(recID,employee.parcelID)">
+                  <span>Handover</span></button>
+              
+
+              
+              </ng-template>
+              
+<td>
+  <button class="btn btn-secondary mb-1"
+
+  (click)="open({title: 'Simple Modal', content: mTemplate})">
+
+  Handover
+
+  </button>
+</td>
+             
+
+
               <td>{{employee.status}}</td>
               </tr>
       </tbody>
     
-      </table>
-      
+      </table-->
+<ng-template #bTemplate let-column="column" let-dataItem="dataItem" >
+  <adapt-button btn-type="primary" (click)="open({title: 'Receiver Details', content: mTemplate}, dataItem)">Handover</adapt-button>
+</ng-template>
+
+<ng-template #mTemplate let-c="close">
+  <div align="center"  style="display: block;">
+    <adapt-textfield style="display:inline-block; align-self: center;" label="Receiver ID" rows="1" required name="textarea" [(ngModel)]="recID"></adapt-textfield>
+    <button adapt-button style="display:inline-block; align-self: center;" btn-type="primary" size="large" class=" btn-primary" (click)="handoverParcel(recID)">
+      <span>Handover</span></button>
+  </div>
+  
+</ng-template>
+
+<adapt-table #adaptTable [value]="ParcelDatabases" [columns]="cols" [rows]="10" [first]="0" [paginator]="true"
+  [resizableColumns]="true" [bordered]="true" dataKey="parcelID" paginatorAlign="right" [loading]="loading"
+  [lazyLoadOnInit]="false" [enableReorderableRows]="true" [filterable]="true" [filters]="filters" 
+  [toolbarConfig]="optionsProperties.hasToolbar ? toolbarConfig : null" [disabledRowSelectionInMultiMode]="optionsProperties.disableRowSelection"
+  [disabledRowSelectionResolver]="disabledRowSelectionResolver">
+</adapt-table>
+
 </html>

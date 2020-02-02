@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HandoverpageComponent implements OnInit {
 
-  user: ParcelDatabase = new ParcelDatabase("","","","","","","","","","","","","","");
+  user: ParcelDatabase = new ParcelDatabase();
  
   constructor(
     private httpClientService: HttpClientService,

@@ -28,7 +28,12 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/@bmc-ux/adapt-css/dist/css/adapt-css-bs4.css",
+              "node_modules/@bmc-ux/dpl-iconfont/dist/css/dpl-iconfont.css",
+
+
               "src/styles.scss"
+
             ],
             "scripts": []
           },

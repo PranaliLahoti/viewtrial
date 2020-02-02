@@ -1,4 +1,11 @@
-<div class="col-md-6">
+<adapt-navigation
+[metadata]="metadata"
+[menu]="items"
+[actions]="actions">
+</adapt-navigation>
+
+
+<!--div class="col-md-6">
     <h2 class="text-center">Add Parcel</h2>
     <form >
       <div class="form-group">
@@ -26,6 +33,53 @@
       
       <button class="btn btn-success" (click)="createEmployee()">Create</button>
     </form>
-    </div>
+  </div-->
+  <div align="center"  style="display: block;">
+  <form  style=display:inline-block;text-align:left;width:30%>
+
+  <adapt-textfield
+      label="Parcel ID:"
+      placeholder="Parcel ID"
+      type="string"
+      name="parcelID"
+      required [(ngModel)]="user.parcelID">
+</adapt-textfield>
+     <adapt-textfield autocomlete="off"
+        label="Employee Phone:"
+        placeholder="Phone Number"
+        type="string"
+        minlength="10"
+        maxlength="10"
+        name="ephone"
+        required [(ngModel)]="user.ephone">
+       </adapt-textfield>
+       <adapt-textfield
+             label="Parcel Company"
+             placeholder="Parcel Company"
+             type="string"
+             name="cname"
+             [(ngModel)]="user.cname">
+        </adapt-textfield>
+        <adapt-textfield
+             label="Rack"
+             placeholder="Rack"
+             type="number"
+             name="rack"
+             required [(ngModel)]="user.rack">
+        </adapt-textfield>
+        <adapt-textfield
+             label="Note"
+             placeholder="Note"
+             maxlength="20"
+             type="string"
+             name="note"
+             [(ngModel)]="user.note">
+        </adapt-textfield>
+        <button adapt-button style="margin: auto;display: block;" btn-type="primary" (click)="createEmployee()"><span>Submit</span></button>
+  </form>
+</div>
+       
+
+
         
     

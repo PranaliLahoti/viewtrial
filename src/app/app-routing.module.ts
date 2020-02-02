@@ -7,18 +7,19 @@ import { ParcelHistoryComponent } from './parcel-history/parcel-history.componen
 import { SecurityDashboardComponent } from './security-dashboard/security-dashboard.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
 import { HandoverpageComponent } from './handoverpage/handoverpage.component';
+import { LogoutComponent } from './logout/logout.component';
 
 
 const routes: Routes = [
   { path: '\login', component: LoginComponent},
   { path:'\employeedashboard', component:EmployeeDashboardComponent,canActivate:[AuthGaurdService]},
   { path:'employeedashboard/:parcelID', component:EmployeeDashboardComponent},
-  { path: '\parcelhistory' , component:ParcelHistoryComponent} ,
+  { path: '\parcelhistory' , component:ParcelHistoryComponent,canActivate:[AuthGaurdService]} ,
   {path:'\securitydashboard',component:SecurityDashboardComponent,canActivate:[AuthGaurdService]},
   { path:'\orders', component: OrderDetailsComponent,canActivate:[AuthGaurdService]},
   { path:'\handoverpage', component: HandoverpageComponent,canActivate:[AuthGaurdService] },
-  { path:'handoverpage/:parcelID', component: HandoverpageComponent,canActivate:[AuthGaurdService]}
- 
+  { path:'handoverpage/:parcelID', component: HandoverpageComponent,canActivate:[AuthGaurdService]},
+  { path:'\logout',component: LogoutComponent,canActivate:[AuthGaurdService]}
  
 ];
 

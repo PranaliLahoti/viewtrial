@@ -12,7 +12,16 @@ import { ParcelHistoryComponent } from './parcel-history/parcel-history.componen
 import { SecurityDashboardComponent } from './security-dashboard/security-dashboard.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
 import { HandoverpageComponent } from './handoverpage/handoverpage.component';
+import {AdaptNavigationModule} from '@bmc-ux/adapt-angular';
+import { AdaptTextFieldModule } from '@bmc-ux/adapt-angular';
+import { AdaptButtonModule } from '@bmc-ux/adapt-angular';
+import { AdaptLoginPageModule } from '@bmc-ux/adapt-angular';
 
+import { AdaptCheckbox2Module } from '@bmc-ux/adapt-angular';
+import {AdaptModalModule} from '@bmc-ux/adapt-angular';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {AdaptTableModule} from '@bmc-ux/adapt-table';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -29,12 +38,24 @@ import { HandoverpageComponent } from './handoverpage/handoverpage.component';
     
     HandoverpageComponent,
     
+    LogoutComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AdaptNavigationModule.forRoot(),
+    AdaptTextFieldModule,
+    AdaptButtonModule,
+    AdaptLoginPageModule,
+    AdaptCheckbox2Module,
+    AdaptModalModule,
+    BrowserAnimationsModule,
+    AdaptModalModule.forRoot(),
+    AdaptTableModule
+
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS, useClass:BasicAuthHttpInterceptorService, multi:true}
