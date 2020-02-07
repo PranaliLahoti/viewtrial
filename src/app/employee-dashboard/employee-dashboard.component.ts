@@ -92,15 +92,20 @@ export class EmployeeDashboardComponent implements OnInit {
   
   items = [
     {
+      name: 'Dashboard',
+      link:'\employeedashboard',
+      id: 1
+    },
+    {
       name: 'History',
       link:'\parcelhistory',
-      id: 1
+      id: 2
     },
     {
       name: 'Logout',
       link: '\logout',
       //action: this.temp(),
-      id: 2
+      id: 3
     }
   ]
   collectParcel(parcelID): void {

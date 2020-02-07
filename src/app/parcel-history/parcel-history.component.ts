@@ -77,14 +77,18 @@ optionsProperties: any = {
   items = [
     {
       name: 'Dashboard',
-      link: '\employeedashboard',
+      link:'\employeedashboard',
       id: 1
+    },
+    {
+      name: 'History',
+      link:'\parcelhistory',
+      id: 2
     },
     {
       name: 'Logout',
       link: '\logout',
-      //action: this.temp(),
-      id: 2
+      id: 3
     }
  ]
 

@@ -41,18 +41,32 @@ export class OrderDetailsComponent implements OnInit {
   items = [
     {
       name: 'Dashboard',
-      link:'\securitydashboard',
+      link: '\securitydashboard',
+
       id: 1
+    },
+   
+    {
+      name: 'Handed over parcel',
+      link: '\securityhistory',
+
+      id: 2
+    },
+   
+    {
+      name: 'Collect Parcel',
+      link: '\orders',
+
+      id: 3
     },
     {
       name: 'Logout',
       link: '\logout',
       //action: this.temp(),
-      id: 2
+      id: 4
     }
-   
   ]
-  
+
 
   createEmployee(): void {
     this.httpClientService.createEmployee(this.user)

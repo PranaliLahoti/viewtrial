@@ -69,31 +69,29 @@ export class SecurityDashboardComponent implements OnInit {
   private getColls(): ColumnConfig[] {
     return [
       {
-        field: 'parcelID', header: 'Parcel ID', editable: false
+        field: 'parcelID', header: 'Parcel ID', editable: false, sortable:false
       },
       {
-        field: 'empId', header: 'Employee ID', editable: false
+        field: 'empId', header: 'Employee ID', editable: false, sortable:false
       },
       {
-        field: 'cname', header: 'Company Name', editable: false
+        field: 'cname', header: 'Company Name', editable: false, sortable:false
       },
       {
         field: 'r_time', header: 'Receive Time', editable: false
       },
       {
-        field: 'rack', header: 'Rack', editable: false,
+        field: 'rack', header: 'Rack', editable: false, sortable:false
       },
       {
-        field: 'note', header: 'Note', editable: false
+        field: 'note', header: 'Note', editable: false, sortable:false
       },
       {
-        field: 'd_time', header: 'Deliver Time', editable: false
+        field: 'status', header: 'Status', editable: false, sortable:false
       },
+      
       {
-        field: 'status', header: 'Status', editable: false
-      },
-      {
-        field: '', header: 'Check', editable: false, filterable:false, 
+        field: '', header: 'Check', editable: false, filterable:false, sortable:false,
         cellTemplate: this.bTemplate
 
       },
@@ -120,10 +118,14 @@ export class SecurityDashboardComponent implements OnInit {
     alert(recID);
     user.parcelID = this.parcelID;
     user.recId = recID;
+    //user.otp=otp;
+    //console.log("user otp "+otp)
+
     this.httpClientService.handoverParcel(user).subscribe(data => {
       alert("Receiver details added successfully");
     });
     this.modalPromise.reject("hsdjh")
+
   }
 
   handleSuccessfulResponse(response) {
@@ -150,16 +152,30 @@ export class SecurityDashboardComponent implements OnInit {
 
   items = [
     {
+      name: 'Dashboard',
+      link: '\securitydashboard',
+
+      id: 1
+    },
+   
+    {
+      name: 'Handed over parcel',
+      link: '\securityhistory',
+
+      id: 2
+    },
+   
+    {
       name: 'Collect Parcel',
       link: '\orders',
 
-      id: 1
+      id: 3
     },
     {
       name: 'Logout',
       link: '\logout',
       //action: this.temp(),
-      id: 2
+      id: 4
     }
   ]
 

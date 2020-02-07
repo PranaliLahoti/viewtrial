@@ -16,6 +16,7 @@ export class ParcelDatabase {
   public recId: string;
   public recname: string;
   public recphone: string;
+  public otp:string;
 }
 
 
@@ -33,6 +34,13 @@ export class HttpClientService {
     var token = sessionStorage.getItem('token');
     const headers = new HttpHeaders({ Authorization: token });
     return this.httpClient.get<ParcelDatabase[]>('http://localhost:8080/securitydashboard', { headers });
+  }
+
+  getSecurityHistory() {
+    var token = sessionStorage.getItem('token');
+    const headers = new HttpHeaders({ Authorization: token });
+    
+    return this.httpClient.get<ParcelDatabase[]>('http://localhost:8080/securityhistory', { headers });
   }
 
   public createEmployee(ParcelDatabases) {
@@ -64,6 +72,7 @@ export class HttpClientService {
   public handoverParcel(ReceiverDatabases) {
 
     console.log("++++++++++++++" + ReceiverDatabases.parcelID);
+    //this.getEmployees();
     return this.httpClient.post<ParcelDatabase>("http://localhost:8080/securitydashboard", ReceiverDatabases);
   }
 

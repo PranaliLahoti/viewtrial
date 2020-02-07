@@ -8,6 +8,7 @@ import { SecurityDashboardComponent } from './security-dashboard/security-dashbo
 import { OrderDetailsComponent } from './order-details/order-details.component';
 import { HandoverpageComponent } from './handoverpage/handoverpage.component';
 import { LogoutComponent } from './logout/logout.component';
+import {SecurityHistoryComponent} from './security-history/security-history.component';
 
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path:'\orders', component: OrderDetailsComponent,canActivate:[AuthGaurdService]},
   { path:'\handoverpage', component: HandoverpageComponent,canActivate:[AuthGaurdService] },
   { path:'handoverpage/:parcelID', component: HandoverpageComponent,canActivate:[AuthGaurdService]},
-  { path:'\logout',component: LogoutComponent,canActivate:[AuthGaurdService]}
+  { path:'\logout',component: LogoutComponent,canActivate:[AuthGaurdService]},
+  {path:'\securityhistory' , component:SecurityHistoryComponent,canActivate:[AuthGaurdService]}
  
 ];
 

@@ -34,16 +34,11 @@
       <button class="btn btn-success" (click)="createEmployee()">Create</button>
     </form>
   </div-->
+  <div align="center" style="display: block;"><h1><strong>Parcel Details</strong></h1></div>
+  
   <div align="center"  style="display: block;">
   <form  style=display:inline-block;text-align:left;width:30%>
 
-  <adapt-textfield
-      label="Parcel ID:"
-      placeholder="Parcel ID"
-      type="string"
-      name="parcelID"
-      required [(ngModel)]="user.parcelID">
-</adapt-textfield>
      <adapt-textfield autocomlete="off"
         label="Employee Phone:"
         placeholder="Phone Number"
@@ -60,17 +55,27 @@
              name="cname"
              [(ngModel)]="user.cname">
         </adapt-textfield>
+        
+        <adapt-textfield
+        label="Parcel ID:"
+        placeholder="Parcel ID"
+        type="string"
+        name="parcelID"
+        required [(ngModel)]="user.parcelID">
+  </adapt-textfield>
+   
         <adapt-textfield
              label="Rack"
              placeholder="Rack"
              type="number"
              name="rack"
-             required [(ngModel)]="user.rack">
+             [(ngModel)]="user.rack">
         </adapt-textfield>
         <adapt-textfield
              label="Note"
              placeholder="Note"
-             maxlength="20"
+             rows="4"
+             maxlength="50"
              type="string"
              name="note"
              [(ngModel)]="user.note">

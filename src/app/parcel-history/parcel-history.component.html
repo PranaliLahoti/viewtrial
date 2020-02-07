@@ -29,10 +29,13 @@
       </table>
 
 -->
+<div align="center" style="display: block;"><h1><strong>History</strong></h1></div>
+<div style="padding: 3%;">
 <adapt-table #adaptTable [value]="ParcelDatabases" [columns]="cols" [rows]="10" [first]="0" [paginator]="true"
   [resizableColumns]="true" [bordered]="true" dataKey="parcelID" paginatorAlign="right" [loading]="loading"
   [lazyLoadOnInit]="false" [enableReorderableRows]="true"  [filterable]="true" [filters]="filters"
   [toolbarConfig]="optionsProperties.hasToolbar ? toolbarConfig : null">
 </adapt-table>
+</div>
 
 </html>
