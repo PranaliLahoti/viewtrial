@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClientService, ParcelDatabase } from '../http-client.service';
 import {Router} from '@angular/router';
 import { AuthenticationService } from '../authentication.service';
+import { ToastModel } from '@bmc-ux/adapt-angular';
+
 
 @Component({
   selector: 'app-order-details',
@@ -11,7 +13,16 @@ import { AuthenticationService } from '../authentication.service';
 export class OrderDetailsComponent implements OnInit {
 
   user: ParcelDatabase = new ParcelDatabase();
-  
+  mail:String;
+
+  msgs: ToastModel[] = [];
+  life: number = 3000;
+  counts: number = 0;
+  disabled: boolean = false;
+  delay = 3000;
+  placement = 'top-right';
+
+
   constructor(
     private httpClientService: HttpClientService,
     private router: Router,
@@ -20,6 +31,9 @@ export class OrderDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
+   
+        
   }
 
   metadata = {
@@ -67,14 +81,24 @@ export class OrderDetailsComponent implements OnInit {
     }
   ]
 
+  
 
   createEmployee(): void {
+ 
+  
     this.httpClientService.createEmployee(this.user)
         .subscribe( data => {
-         // alert("order entry created successfully.");
+          //alert(this.user.email);
           this.router.navigateByUrl('/securitydashboard');
         });
+    //    setTimeout(() => { this.disabled = false; }, this.life);
+
 
   };
+
+  handleSuccessfulResponse(response)
+  {
+     
+  }
 
 }

@@ -69,12 +69,12 @@
   <div align="center"  style="display: block;">
     <adapt-textfield style="display:inline-block; align-self: center;" label="Receiver ID" rows="1" required name="textarea" [(ngModel)]="recID"></adapt-textfield>
   </div>
-  <!--
+  
   <div align="center"  style="display: block;">
     <adapt-textfield style="display:inline-block; align-self: center;" label="OTP" rows="1" required name="textarea2" [(ngModel)]="otp"></adapt-textfield>
-  </div-->
+  </div>
   <div align="center"  style="display: block;">
-    <button adapt-button style="display:inline-block; align-self: center;" btn-type="primary" size="large" class=" btn-primary" (click)="handoverParcel(recID)">
+    <button adapt-button style="display:inline-block; align-self: center;" btn-type="primary" size="large" class=" btn-primary" (click)="handoverParcel(recID,otp)">
       <span>Handover</span></button>
   </div>
   

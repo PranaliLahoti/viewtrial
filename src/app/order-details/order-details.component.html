@@ -4,6 +4,7 @@
 [actions]="actions">
 </adapt-navigation>
 
+<adapt-toast [value]="msgs" [life]="life" [placement]="placement"></adapt-toast>
 
 <!--div class="col-md-6">
     <h2 class="text-center">Add Parcel</h2>
@@ -80,7 +81,9 @@
              name="note"
              [(ngModel)]="user.note">
         </adapt-textfield>
-        <button adapt-button style="margin: auto;display: block;" btn-type="primary" (click)="createEmployee()"><span>Submit</span></button>
+
+        <adapt-toast [value]="msgs" [life]="life" [placement]="placement"></adapt-toast>
+        <button adapt-button style="margin: auto;display: block;" btn-type="primary" [disabled]="disabled" (click)="createEmployee()"><span>Submit</span></button>
   </form>
 </div>
        

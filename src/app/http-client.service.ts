@@ -36,6 +36,11 @@ export class HttpClientService {
     return this.httpClient.get<ParcelDatabase[]>('http://localhost:8080/securitydashboard', { headers });
   }
 
+  getEmailId()
+  {
+    return this.httpClient.get<String>('http://localhost:8080/securitydashboard');
+  }
+  
   getSecurityHistory() {
     var token = sessionStorage.getItem('token');
     const headers = new HttpHeaders({ Authorization: token });
@@ -73,7 +78,11 @@ export class HttpClientService {
 
     console.log("++++++++++++++" + ReceiverDatabases.parcelID);
     //this.getEmployees();
-    return this.httpClient.post<ParcelDatabase>("http://localhost:8080/securitydashboard", ReceiverDatabases);
+    return this.httpClient.post<ParcelDatabase>("http://localhost:8080/securitydashboard",ReceiverDatabases);
+    
+  }
+  public addinhistory(ReceiverDatabases){
+    return this.httpClient.post<ParcelDatabase>("http://localhost:8080/securityhistory", ReceiverDatabases);
   }
 
 }

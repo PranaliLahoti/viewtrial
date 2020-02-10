@@ -61,23 +61,32 @@ export class SecurityHistoryComponent implements OnInit {
   private getColls(): ColumnConfig[] {
     return [
       {
-        field: 'parcelID', header: 'Parcel ID', editable: false
+        field: 'parcelID', header: 'Parcel ID', editable: false, sortable:false
       },
       {
-        field: 'empId', header: 'Employee ID', editable: false
+        field: 'empId', header: 'Employee ID', editable: false, sortable:false
+
       },
       {
-        field: 'cname', header: 'Company Name', editable: false
+        field: 'cname', header: 'Company Name', editable: false, sortable:false
+
       },
       {
-        field: 'r_time', header: 'Receive Time', editable: false
+        field: 'r_time', header: 'Receive Time', editable: false, sortable:false
+
       },
       {
-        field: 'd_time', header: 'Deliver Time', editable: false
+        field: 'd_time', header: 'Deliver Time', editable: false, sortable:false
+
       },
       {
-        field: 'status', header: 'Status', editable: false
+        field: 'status', header: 'Status', editable: false, sortable:false
+
       },
+      {
+        field: 'time_diff', header: 'Time Difference', editable: false, 
+      },
+      
        ]
   }
   

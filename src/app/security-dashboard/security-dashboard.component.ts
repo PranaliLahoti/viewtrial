@@ -78,7 +78,8 @@ export class SecurityDashboardComponent implements OnInit {
         field: 'cname', header: 'Company Name', editable: false, sortable:false
       },
       {
-        field: 'r_time', header: 'Receive Time', editable: false
+        field: 'r_time', header: 'Receive Time', editable: false, sortable:false
+
       },
       {
         field: 'rack', header: 'Rack', editable: false, sortable:false
@@ -88,6 +89,9 @@ export class SecurityDashboardComponent implements OnInit {
       },
       {
         field: 'status', header: 'Status', editable: false, sortable:false
+      },
+      {
+        field: 'time_diff', header: 'Time Difference', editable: false, 
       },
       
       {
@@ -112,20 +116,22 @@ export class SecurityDashboardComponent implements OnInit {
     });
   }
 
-  public handoverParcel(recID) {
+  public handoverParcel(recID,otp) {
     const user: ParcelDatabase = new ParcelDatabase();
     alert(this.parcelID);
     alert(recID);
     user.parcelID = this.parcelID;
     user.recId = recID;
-    //user.otp=otp;
-    //console.log("user otp "+otp)
+    user.otp=otp;
+    console.log("user otp "+otp)
 
     this.httpClientService.handoverParcel(user).subscribe(data => {
       alert("Receiver details added successfully");
     });
     this.modalPromise.reject("hsdjh")
-
+    this.httpClientService.addinhistory(user).subscribe(data =>{
+      alert("Added in history");
+    });
   }
 
   handleSuccessfulResponse(response) {

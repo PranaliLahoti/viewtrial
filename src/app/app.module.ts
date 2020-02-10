@@ -24,6 +24,7 @@ import {AdaptTableModule} from '@bmc-ux/adapt-table';
 import { LogoutComponent } from './logout/logout.component';
 import { SecurityHistoryComponent } from './security-history/security-history.component';
 import {AdaptDropdownEditableModule} from '@bmc-ux/adapt-angular';
+import { AdaptToastModule } from '@bmc-ux/adapt-angular'
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +59,8 @@ import {AdaptDropdownEditableModule} from '@bmc-ux/adapt-angular';
     BrowserAnimationsModule,
     AdaptModalModule.forRoot(),
     AdaptTableModule,
-    AdaptDropdownEditableModule
+    AdaptDropdownEditableModule,
+    AdaptToastModule
 
   ],
   providers: [

@@ -8,7 +8,7 @@
     <adapt-table #adaptTable [value]="ParcelDatabases" [columns]="cols" [rows]="10" [first]="0" [paginator]="true"
     [resizableColumns]="true" [bordered]="true" dataKey="parcelID" paginatorAlign="right" [loading]="loading"
     [lazyLoadOnInit]="false" [enableReorderableRows]="true" [filterable]="true" [filters]="filters" 
-    [toolbarConfig]="optionsProperties.hasToolbar ? toolbarConfig : null" >
+    [toolbarConfig]="optionsProperties.hasToolbar ? toolbarConfig : null"  [sortable]="true">
   </adapt-table>
 </div>
   </html>
